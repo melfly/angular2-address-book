@@ -34,5 +34,6 @@ npm run e2e
 ```
 
 ## Design considerations
--
-
+- Prod configuration for webpack is omitted to simplify the configuration.
+- Unit/e2e tests does not have 100 coverage. More tests should be added if it was a real project.
+- Some dependencies are defined but not used such as rxjs as it is most likely used in a real project where FE talks to BE service.
