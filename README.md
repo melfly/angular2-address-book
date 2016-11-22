@@ -25,8 +25,6 @@ npm install
 # start the app
 npm start
 # Open http://localhost:3000/ in browser
-# run tslint
-npm run lint
 # run unit tests
 npm run test
 # run e2e tests
