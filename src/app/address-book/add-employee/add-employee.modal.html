@@ -1,0 +1,41 @@
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">New Employee</h4>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="save()" #addEmployeeForm="ngForm">
+      <fieldset>
+        <div class="form-group">
+          <label for="firstName">First name *</label>
+          <input id="firstName" class="form-control" name="firstName" type="text" [(ngModel)]="newEmployee.firstName"
+                 autofocus required/>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" class="form-control" name="lastName" type="text" [(ngModel)]="newEmployee.lastName"
+                 required/>
+        </div>
+        <div class="form-group">
+          <label for="department">Department *</label>
+          <input id="department" class="form-control" name="department" type="text" [(ngModel)]="newEmployee.department"
+                 required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" class="form-control" name="phone" type="tel" [(ngModel)]="newEmployee.phone" requried/>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" [disabled]="!addEmployeeForm.form.valid" (click)="save()">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancel</button>
+  </div>
+</template>
+
+<button class="btn btn-lg btn-primary" (click)="open(content)">Add employee</button>
+

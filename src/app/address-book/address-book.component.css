@@ -1,0 +1,4 @@
+/**Override Boostrap style to make the button smaller in table header*/
+.btn-sm {
+  padding: 2px;
+}

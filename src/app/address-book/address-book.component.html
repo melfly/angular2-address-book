@@ -1,0 +1,46 @@
+<div>
+  <add-employee (added)="search($event)"></add-employee>
+  <hr/>
+
+  <form class="mt-2 form-inline">
+    <div class="form-group">
+      <label for="name">Search by Name: </label>
+      <input id="name" name="name" class="form-control" type="search" [(ngModel)]="name" autofocus
+             (keyup)="search($event)"/>
+    </div>
+    <div class="form-group">
+      <label for="department">and Department: </label>
+      <input id="department" name="department" class="form-control" type="search" [(ngModel)]="department"
+             (keyup)="search($event)"/>
+    </div>
+    <button type="button" class="btn btn-secondary" (click)="clear()">Clear/Display all</button>
+  </form>
+</div>
+
+<table class="table mt-1">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name
+      <button type="button" class="btn btn-info btn-sm" (click)="sortByLastName()">
+        Sort
+      </button>
+      <small>{{sortingState}}</small>
+    </th>
+    <th>Department</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let e of employees">
+    <td>{{e.firstName}}</td>
+    <td>{{e.lastName}}</td>
+    <td>{{e.department}}</td>
+    <td>{{e.phone}}</td>
+    <td>
+      <button type="button" class="btn btn-warning" (click)="delete(e)">delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
