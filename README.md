@@ -3,6 +3,7 @@ Simple Address book implemented in Angular 2
 
 ## Dev stack
 * angular 2 / typescript
+* bootstrap - styling
 * webpack - resource bundler
 * karma/jasmine - unit test
 * protractor - e2e test

@@ -1,0 +1,4 @@
+/*Override bootstrap jumbotron to make smaller*/
+.jumbotron {
+    height: 150px;
+}

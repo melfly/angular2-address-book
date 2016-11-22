@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
       <div class="container">
       <address-book></address-book>
       <template ngbModalContainer></template>
-    </div>`
+    </div>`,
+    styleUrls: ['app.component.css']
 })
 export class AppComponent {
 }
