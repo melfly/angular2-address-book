@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AddressBookComponent } from './address-book.component';
 import { EmployeeService } from '../model/employee.service';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -15,7 +14,7 @@ describe('AddressBookComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [AddressBookComponent],
-      imports: [BrowserModule, FormsModule],
+      imports: [FormsModule],
       providers: [
         {
           provide: EmployeeService,

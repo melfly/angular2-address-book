@@ -24,7 +24,7 @@ export class AddEmployeeModal {
     this.modalRef.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      this.closeResult = 'Modal cancelled';
     });
   }
 
@@ -33,14 +33,4 @@ export class AddEmployeeModal {
     this.added.emit(this.newEmployee);
     this.modalRef.close();
   };
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
 }
